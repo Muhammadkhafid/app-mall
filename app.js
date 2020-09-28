@@ -1,11 +1,11 @@
-
 const express = require('express')
 const app = express()
 require ('./models/dbConnect')
 const bodyParser = require("body-parser");
 var session = require('express-session')
-const routerProduk = require('./controllers/routerProduk');
+const exampleRouter = require('./controllers/example.Controller');
 const exampleUtils = require('./utils/example.Utils')
+const routerProduk = require('./controllers/routerProduk');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -19,8 +19,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use('/produk', routerProduk);
+// app.use('/', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
+
+app.use('/produk', routerProduk);
 
 app.listen(process.env.PORT || 3000,() => {
     console.log(`App Started on PORT ${process.env.PORT || 3000}`);
