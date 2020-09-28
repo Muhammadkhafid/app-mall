@@ -3,7 +3,7 @@ const app = express()
 require ('./models/dbConnect')
 const bodyParser = require("body-parser");
 var session = require('express-session')
-const exampleRouter = require('./controllers/example.Controller');
+const routerProduk = require('./controllers/routerProduk');
 const exampleUtils = require('./utils/example.Utils')
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -18,7 +18,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// app.use('/', exampleRouter);
+app.use('/produk', routerProduk);
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.listen(process.env.PORT || 3000,() => {
