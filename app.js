@@ -6,11 +6,14 @@ var session = require('express-session')
 const exampleRouter = require('./controllers/example.Controller');
 const exampleUtils = require('./utils/example.Utils')
 const routerProduk = require('./controllers/routerProduk');
+const Distributor = require('./controllers/distributorController');
+const Kurir = require('./controllers/kurirController');
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 app.use(express.static('views'));
 
 app.use(session({
@@ -21,6 +24,8 @@ app.use(session({
 
 // app.use('/', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
+app.use('/distributor', Distributor);
+app.use('/kurir', Kurir);
 
 app.use('/produk', routerProduk);
 
