@@ -1,4 +1,4 @@
-const express = require('express')
+onst express = require('express')
 const app = express()
 require ('./models/dbConnect')
 const bodyParser = require("body-parser");
