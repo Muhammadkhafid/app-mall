@@ -10,7 +10,7 @@ const exampleUtils = require('./utils/example.Utils')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 app.use(express.static('views'));
 
 app.use(session({
