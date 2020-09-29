@@ -1,13 +1,17 @@
-onst express = require('express')
+const express = require('express')
 const app = express()
 require ('./models/dbConnect')
 const bodyParser = require("body-parser");
 var session = require('express-session')
-const exampleRouter = require('./controllers/example.Controller');
-const exampleUtils = require('./utils/example.Utils')
+const userauth = require('./controllers/userauth');
+const auth = require('./utils/authlogin')
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
+const kategori = require('./controllers/kategoriController');
+const request = require("supertest");
+const admin = require('./controllers/adminController')
+
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -22,11 +26,11 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// app.use('/', exampleRouter);
-// app.use('/admin',exampleUtils,exampleRouter);
+app.use('/', userauth);
+app.use('/admin',auth.is_admin,admin);
 app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
-
+app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
 
 app.listen(process.env.PORT || 3000,() => {
