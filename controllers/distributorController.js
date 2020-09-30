@@ -32,15 +32,16 @@ router.post("/tambah", async(req, res) => {
     }
 });
 
+
 router.post("/edit/:id", getDistributor, async(req, res) => {
     try {
         const editDistributor = await res.distributor.set(req.body);
         res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
-
     } catch (err) {
         res.status(400).json({message: err.message});
     }
 });
+
 
 router.get("/hapus/:id", getDistributor, async(req, res) => {
     try {

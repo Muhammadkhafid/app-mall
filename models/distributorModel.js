@@ -11,7 +11,11 @@ const distributor = new Schema({
         require: true
     },
     noHp: {
+<<<<<<< HEAD
         type: String,
+=======
+        type: Number,
+>>>>>>> aa14ffe93953dbf83ad85d88632bb525412b106b
         require: true
     },
     pemilik: {
