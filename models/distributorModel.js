@@ -11,7 +11,7 @@ const distributor = new Schema({
         require: true
     },
     noHp: {
-        type: Number,
+        type: String,
         require: true
     },
     pemilik: {

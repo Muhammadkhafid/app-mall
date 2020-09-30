@@ -12,14 +12,14 @@ const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
 const exampleRouter = require('./controllers/example.Controller');
-const exampleUtils = require('./utils/example.Utils')
+// const exampleUtils = require('./utils/example.Utils')
 
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
 const kategori = require('./controllers/kategoriController');
-const request = require("supertest");
-const admin = require('./controllers/adminController')
+// const request = require("supertest");
+// const admin = require('./controllers/adminController')
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -47,7 +47,7 @@ app.use(session({
 }));
 
 app.use('/', userauth);
-app.use('/admin',auth.is_admin,admin);
+// app.use('/admin',auth.is_admin,admin);
 
 app.use('/', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
