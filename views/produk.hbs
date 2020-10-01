@@ -7,7 +7,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Product List</title>
 
     <!-- Fontfaces CSS-->
     <link href="template/css/font-face.css" rel="stylesheet" media="all">
@@ -137,24 +137,25 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="index.html">
+                            <a class="js-arrow" href="/dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="/distributor">
                                 <i class="fas fa-table"></i>Distributor</a>
                         </li>
 
-                        <li>
+                        <li class="active">
                             <a href="/produk">
                                 <i class="fas fa-table"></i>Produk</a>
                         </li>
 
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a href="/kategori">
+                                <i class="fas fa-table"></i>Kategori</a>
                         </li>
+
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
@@ -326,7 +327,7 @@
                                                     <label for="cc-exp" class="control-label mb-1">Kategori</label>
                                                     <select id="cc-exp" name="kategori" type="text"
                                                         class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Kategori Produk" autocomplete="cc-exp">
                                                         <option>Pulsa</option>
@@ -341,7 +342,7 @@
                                                 <div class="input-group">
                                                     <select id="cc-exp" name="kategori" type="text"
                                                         class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Kategori Produk" autocomplete="cc-exp">
                                                         <option>Tsel</option>
