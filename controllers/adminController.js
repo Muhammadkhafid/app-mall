@@ -1,15 +1,16 @@
 const request = require('supertest')
 const express = require('express')
-// const app = express()
+const Produk = require('../models/modelProduk')
+const User = require('../models/user')
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-    const client = request(req.app);
-    const produk = await client.get("/produk");
-    const kategori = await client.get("/kategori");
-    res.json({
-        produk:produk.body,
-        kategori:kategori.body
+    const countProduk = await Produk.countDocuments({})
+    const countUser = await User.countDocuments({})
+    res.status(200).json({
+        nama:req.session.nama,
+        totalProduk:countProduk,
+        totalUser:countUser
     })
 })
 
