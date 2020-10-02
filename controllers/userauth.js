@@ -1,6 +1,18 @@
 const express = require('express')
 const User = require('../models/user')
+const Produk = require('../models/modelProduk')
 const router = express.Router()
+
+router.get('/home', async(req,res)=>{
+    const produk = await Produk.countDocuments()
+    const user = await User.countDocuments()
+    // res.send('login')
+    res.render('dashboard', {
+        produk : produk,
+        user : user,
+        nama : req.session.nama
+    })
+})
 
 router.get('/login',(req,res)=>{
     // res.send('login')
@@ -20,7 +32,8 @@ router.post('/login',async(req,res)=>{
             res.send(req.session.level)
         }else{
             req.session.logged_in = true
-            res.send(req.session.level)
+            // res.send(req.session.level)
+            res.redirect("/home")
         }
     } catch (err) {
         
@@ -41,7 +54,8 @@ router.post('/register',async (req,res)=>{
 
     try{
         const tambahUser = await user.save()
-        res.status(200).json({message: 'Berhasil',data: tambahUser})
+        // res.status(200).json({message: 'Berhasil',data: tambahUser})
+        res.redirect('/login')
     }catch(err){
         res.status(400).json({message: 'error', error: err.message})
     }

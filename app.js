@@ -46,16 +46,10 @@ app.use('/', userauth);
 
 app.use('/example', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
-app.use('/distributor', Distributor);
-app.use('/kurir', Kurir);
 
 app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
 app.use('/kategori',kategori)
-app.use('/produk', routerProduk);
-
-app.use('/kategori', kategori);
-
 app.use('/produk', routerProduk);
 
 app.listen(process.env.PORT || 3000,() => {

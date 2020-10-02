@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -137,11 +139,11 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="index.html">
+                            <a class="js-arrow" href="/home">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="/distributor">
                                 <i class="fas fa-table"></i>Distributor</a>
                         </li>
@@ -328,7 +330,7 @@
                                                 <div class="form-group">
                                                     <label for="cc-exp" class="control-label mb-1">Kategori</label>
                                                     <select id="cc-exp" name="kategori" type="text"
-                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
                                                         data-val-required="Mohon isi Kategori Produk"
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Kategori Produk" autocomplete="cc-exp">
@@ -342,11 +344,11 @@
                                             <div class="col-6">
                                                 <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
                                                 <div class="input-group">
-                                                    <select id="cc-exp" name="kategori" type="text"
-                                                        class="form-control cc-exp" value="" data-val="true"
+                                                    <select id="cc-exp" name="subKategori" type="text"
+                                                        class="form-control cc-exp" value="{{data.subKategori}}" data-val="true"
                                                         data-val-required="Mohon isi Kategori Produk"
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
+                                                        placeholder="Sub Kategori Produk" autocomplete="cc-exp">
                                                         <option>Tsel</option>
                                                         <option>Im3</option>
                                                         <option>By. U</option>
@@ -464,3 +466,5 @@
     <script src="template/js/main.js"></script>
 
 </body>
+
+</html>
