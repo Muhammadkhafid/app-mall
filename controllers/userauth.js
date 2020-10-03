@@ -29,7 +29,7 @@ router.post('/login',async(req,res)=>{
             req.session.level = user.level;
         if (user.level =='admin') {
             req.session.admin = true
-            res.send(req.session.level)
+            res.redirect('/admin')
         }else{
             req.session.logged_in = true
             // res.send(req.session.level)
@@ -41,7 +41,6 @@ router.post('/login',async(req,res)=>{
 })
 
 router.get('/register',(req,res)=>{
-    // res.send('login')
     res.render('register')
 })
 
