@@ -1,0 +1,16 @@
+// const agen = require('../../agenModel');
+
+module.exports = {
+    getAll : async ()=>{
+        const result = await agen.find()
+        return result
+    },
+    getById : async (payload)=>{
+        const result = await agen.find(payload)
+        return result
+    },
+    getByName : async (payload)=>{
+        const result = await agen.find(payload)
+        return result
+    }
+}
