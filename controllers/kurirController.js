@@ -6,6 +6,7 @@ const Kurir = require('../models/kurirModel');
 router.get("/", async(req, res) => {
     try {
         const kurir = await Kurir.find();
+
         res.render('kurir', {
             data:kurir
         })
