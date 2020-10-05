@@ -13,6 +13,7 @@ const auth = require('./utils/authlogin')
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
+const Agen = require('./controllers/agenController');
 const kategori = require('./controllers/kategoriController');
 const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
@@ -46,6 +47,7 @@ app.use('/admin',auth.is_admin,admin);
 
 app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
+app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
 
