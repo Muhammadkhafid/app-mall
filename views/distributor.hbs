@@ -7,7 +7,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Distributor List</title>
 
     <!-- Fontfaces CSS-->
     <link href="/css/font-face.css" rel="stylesheet" media="all">
@@ -39,7 +39,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="template/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -130,25 +130,26 @@
             <div class="logo">
                 <a href="#">
                     <!-- <img src="./images/icon/logo.png" alt="Cool Admin" /> -->
-                    <img src="template/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="/home">
+                            <a class="js-arrow" href="/dashboard">
+                            {{!-- <a class="js-arrow" href="/home"> --}}
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
                         <li>
                             <a href="/distributor">
-                                <i class="fas fa-table"></i>Distributor</a>
+                                <i class="fas fa-truck"></i>Distributor</a>
                         </li>
 
                         <li>
                             <a href="/produk">
-                                <i class="fas fa-table"></i>Produk</a>
+                                <i class="fas fa-box"></i>Produk</a>
                         </li>
 
                         <li>
@@ -160,6 +161,12 @@
                             <a href="/kurir">
                                 <i class="fas fa-motorcycle"></i>Kurir</a>
                         </li>
+
+                         <li>
+                            <a href="/agen">
+                                <i class="fas fa-users"></i>Agen</a>
+                        </li>
+                        
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
@@ -225,7 +232,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -234,7 +241,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -461,11 +468,12 @@
                                                 <td>{{this.pemilik}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="modal"
-                                                            data-target="#modalEditDistributor" data-placement="top"
+                                                        <a href="/distributor/edit/{{this._id}}">
+                                                        <button class="item" data-placement="top"
                                                             title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
+                                                        </a>
 
                                                         <a href="/distributor/hapus/{{this._id}}">
                                                             <button class="item" data-placement="top" title="Delete">
@@ -522,3 +530,4 @@
     <script src="/js/main.js"></script>
 
 </body>
+

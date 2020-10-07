@@ -7,7 +7,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Form Edit</title>
 
     <!-- Fontfaces CSS-->
     <link href="/css/font-face.css" rel="stylesheet" media="all">
@@ -39,7 +39,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="template/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -130,31 +130,43 @@
             <div class="logo">
                 <a href="#">
                     <!-- <img src="./images/icon/logo.png" alt="Cool Admin" /> -->
-                    <img src="template/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="/home">
+                            <a class="js-arrow" href="/dashboard">
+                            {{!-- <a class="js-arrow" href="/home"> --}}
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
                         <li>
                             <a href="/distributor">
-                                <i class="fas fa-table"></i>Distributor</a>
+                                <i class="fas fa-truck"></i>Distributor</a>
                         </li>
 
                         <li>
                             <a href="/produk">
-                                <i class="fas fa-table"></i>Produk</a>
+                                <i class="fas fa-box"></i>Produk</a>
                         </li>
 
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a href="/kategori">
+                                <i class="fas fa-tasks"></i>Kategori</a>
                         </li>
+
+                         <li>
+                            <a href="/kurir">
+                                <i class="fas fa-motorcycle"></i>Kurir</a>
+                        </li>
+
+                         <li>
+                            <a href="/agen">
+                                <i class="fas fa-users"></i>Agen</a>
+                        </li>
+                        
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
@@ -235,7 +247,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -244,7 +256,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -328,8 +340,10 @@
                                                 <div class="form-group">
                                                     <label for="cc-exp" class="control-label mb-1">Kategori</label>
                                                     <select id="cc-exp" name="kategori" type="text"
-                                                        class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
+                                                        class="form-control cc-exp" value="{{this.kategori}}" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
+                                                        data-val-required="Mohon isi Kategori Produk" --}}
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Kategori Produk" autocomplete="cc-exp">
                                                         <option>Pulsa</option>
@@ -343,8 +357,10 @@
                                                 <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
                                                 <div class="input-group">
                                                     <select id="cc-exp" name="subKategori" type="text"
-                                                        class="form-control cc-exp" value="{{data.subKategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
+                                                        class="form-control cc-exp" value="{{this.subKategori}}" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- class="form-control cc-exp" value="{{data.subKategori}}" data-val="true"
+                                                        data-val-required="Mohon isi Kategori Produk" --}}
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Sub Kategori Produk" autocomplete="cc-exp">
                                                         <option>Tsel</option>
@@ -393,16 +409,6 @@
                                                         data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
-                                            {{!-- <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Laba</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="laba" type="text"
-                                                        class="form-control cc-cvc" value="" data-val="true"
-                                                        data-val-required="Mohon isi Laba"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka"
-                                                        autocomplete="off" placeholder="Laba Produk">
-                                                </div>
-                                            </div> --}}
                                         </div>
                                         
                                         <div>
@@ -432,11 +438,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                {{!-- </div>
             </div>
         </div>
-    </div>
-
+    </div> --}}
 
 
     <!-- Jquery JS-->
