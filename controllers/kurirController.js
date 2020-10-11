@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Kurir = require('../models/kurirModel');
 
-
 router.get("/", async(req, res) => {
     try {
         const kurir = await Kurir.find();
-        res.json(kurir);
+
+        res.render('kurir', {
+            data:kurir,
+            title: 'Kurir'
+        })
     } catch (err) {
         res.status(500).json({message: err.message});
     }
@@ -21,20 +24,41 @@ router.post("/tambah", async(req, res) => {
     });
     try {
         const newKurir = await kurir.save();
-        res.status(201).json({ message: "Berhasil Tambah Data Distributor", newKurir });
+        // res.status(201).json({ message: "Berhasil Tambah Data Distributor", newKurir });
+        res.redirect('/kurir')
     } catch (err) {
         res.status(400).json({message: err.message});
+    }
+});
+
+router.get("/edit/:id", getKurir, async(req, res) => {
+    try {
+        const editKurir = await res.kurir.set(req.body);
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
+        res.render('editKurir', {
+            data: editKurir,
+            title: 'Edit Kurir'
+        });
+    } catch (err) {
+        res.status(400).json({message: err.message});
+    }
+
+})
+
+router.post("/update/:id", async(req, res) => {
+    try {
+        const editKurir = await Kurir.findByIdAndUpdate({_id: req.params.id, active:true},req.body)
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data: editProduk});
+        res.redirect('/kurir')
+    } catch (err) {
+        res.status(400).json({message: 'error', error: err.message});
     }
 });
 
 router.put("/edit/:id", getKurir, async(req, res) => {
     try {
         const editKurir = await res.kurir.set(req.body);
-<<<<<<< HEAD
         res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
-=======
-        res.json({ message: "Berhasil Mengubah Data Distributor", editKurir});
->>>>>>> aa14ffe93953dbf83ad85d88632bb525412b106b
     } catch (err) {
         res.status(400).json({message: err.message});
     }

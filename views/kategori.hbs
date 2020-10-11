@@ -21,10 +21,10 @@
     <!-- Vendor CSS-->
     <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <!-- <link href="template/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
     <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <!-- <link href="template/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+    <!-- <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
     <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
@@ -52,17 +52,17 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
+
+                        
+
                         <li>
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Distributor</a>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Produk</a>
                         </li>
 
                         <li>
                             <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="far fa-tasks"></i>Kategori</a>
                         </li>
 
                         <li class="has-sub">
@@ -138,7 +138,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a class="js-arrow" href="/dashboard">
-                                {{!-- <a class="js-arrow" href="/home"> --}}
+                            {{!-- <a class="js-arrow" href="/home"> --}}
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
@@ -147,62 +147,62 @@
                                 <i class="fas fa-truck"></i>Distributor</a>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="/produk">
                                 <i class="fas fa-box"></i>Produk</a>
                         </li>
 
-                        <li>
+                        <li class="active">
                             <a href="/kategori">
                                 <i class="fas fa-tasks"></i>Kategori</a>
                         </li>
 
-                        <li>
+                         <li>
                             <a href="/kurir">
                                 <i class="fas fa-motorcycle"></i>Kurir</a>
                         </li>
 
-                        <li>
+                         <li>
                             <a href="/agen">
                                 <i class="fas fa-users"></i>Agen</a>
                         </li>
-
+                        
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="button.html">Button</a>
+                                    <a href="button">Button</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">Badges</a>
+                                    <a href="badge">Badges</a>
                                 </li>
                                 <li>
-                                    <a href="tab.html">Tabs</a>
+                                    <a href="tab">Tabs</a>
                                 </li>
                                 <li>
-                                    <a href="card.html">Cards</a>
+                                    <a href="card">Cards</a>
                                 </li>
                                 <li>
-                                    <a href="alert.html">Alerts</a>
+                                    <a href="alert">Alerts</a>
                                 </li>
                                 <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
+                                    <a href="progress-bar">Progress Bars</a>
                                 </li>
                                 <li>
-                                    <a href="modal.html">Modals</a>
+                                    <a href="modal">Modals</a>
                                 </li>
                                 <li>
-                                    <a href="switch.html">Switchs</a>
+                                    <a href="switch">Switchs</a>
                                 </li>
                                 <li>
-                                    <a href="grid.html">Grids</a>
+                                    <a href="grid">Grids</a>
                                 </li>
                                 <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                    <a href="fontawesome">Fontawesome Icon</a>
                                 </li>
                                 <li>
-                                    <a href="typo.html">Typography</a>
+                                    <a href="typo">Typography</a>
                                 </li>
                             </ul>
                         </li>
@@ -282,12 +282,12 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <!-- Modal -->
-                <div class="modal fade" id="modalAddProduk" tabindex="-1" role="dialog"
-                    aria-labelledby="modalAddProdukTitle" aria-hidden="true">
+                <div class="modal fade" id="modalAddKategori" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddKategoriTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">produk table </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Kategori produk table </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -295,97 +295,27 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2">Form Tambah Produk</h3>
+                                        <h3 class="text-center title-2">Form Tambah Kategori</h3>
                                     </div>
                                     <hr>
-                                    <form action="/produk/add" method="post" novalidate="novalidate">
+                                    <form action="/kategori/add" method="post" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
+                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Nama Produk">
+                                                aria-required="true" aria-invalid="false"
+                                                placeholder="Nama">
                                         </div>
                                         <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Deskripsi</label>
-                                            <input id="cc-name" name="deskripsi" type="text"
+                                            <label for="cc-name" class="control-label mb-1">sub</label>
+                                            <input id="cc-name" name="sub" type="text"
                                                 class="form-control cc-name valid" data-val="true"
-                                                data-val-required="Mohon isi Deskripsi Produk" autocomplete="cc-name"
+                                                data-val-required="Mohon isi Sub Kategori" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Deskripsi Produk">
+                                                aria-describedby="cc-name-error" placeholder="Sub">
                                             <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
                                                 data-valmsg-replace="true"></span>
                                         </div>
-                                        <hr>
-
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Kategori</label>
-                                                    <select id="cc-exp" name="kategori" type="number"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Nomor Handphone Distributor"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Nomor Handphone Distributor" autocomplete="cc-exp">
-                                                        <option value="pulsa">Pulsa</option>
-                                                        <option value="paket data">Paket Data</option>
-                                                    </select>
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
-                                                <div class="input-group">
-                                                    <select id="cc-exp" name="subKategor" type="text"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
-                                                        <option value="tsel">Tsel</option>
-                                                        <option value="im3">Im3</option>
-                                                        <option value="by. u">By. U</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Harga Jual</label>
-                                                    <input id="cc-exp" name="hargaJual" type="number"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Harga Jual"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Harga Jual Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Harga Beli</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="hargaBeli" type="number"
-                                                        class="form-control cc-cvc" value="" data-val="true"
-                                                        data-val-required="Mohon isi Harga Beli"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka" autocomplete="off"
-                                                        placeholder="Harga Beli Produk">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Stok</label>
-                                                    <input id="cc-exp" name="stok" type="number"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Stok Produk"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Stok Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
 
                                         <div>
                                             <button id="payment-button" type="submit"
@@ -403,14 +333,15 @@
                 </div>
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+
                         <div class="row m-t-30">
                             <div class="col-md-12">
-                                <h3 class="title-5 m-b-35">produk table</h3>
+                                <h3 class="title-5 m-b-35">Kategori Table</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                                            data-toggle="modal" data-target="#modalAddProduk">
-                                            <i class="zmdi zmdi-plus"></i> produk</button>
+                                            data-toggle="modal" data-target="#modalAddKategori">
+                                            <i class="zmdi zmdi-plus"></i> Kategori</button>
                                     </div>
                                 </div>
 
@@ -419,41 +350,37 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>produk</th>
-                                                <th>deskripsi</th>
-                                                <th>kategori</th>
-                                                <th>sub kategori</th>
-                                                <th>stok</th>
-                                                <th>harga jual</th>
-                                                <th>harga beli</th>
-                                                <th>laba</th>
-                                                <th> </th>
+                                                <th>nama</th> 
+                                                <th>sub</th> 
+                                        
+                                                <th></th>   
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody> 
                                             {{#each data}}
                                             <tr>
                                                 <td>{{this.nama}}</td>
-                                                <td>{{this.deskripsi}}</td>
-                                                <td>{{this.kategori}}</td>
-                                                <td>{{this.subKategori}}</td>
-                                                <td>{{this.stok}}</td>
-                                                <td>{{this.hargaBeli}}</td>
-                                                <td>{{this.hargaJual}}</td>
-                                                <td>{{this.laba}}</td>
+                                                <td>{{this.sub}}</td>
+                  
+                         
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="/produk/edit/{{this.id}}">
-                                                            <button class="item" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                        </a>
+                                                        <a href="/kategori/edit/{{this._id}}">
+                                                        <button class="item" data-toggle="" data-placement="top"
+                                                            title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button></a>
 
-                                                        <a href="/produk/delete/{{this.id}}">
-                                                            <button class="item" data-toggle="tooltip" data-target=""
-                                                                data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button></a>
+
+  
+
+                                                        
+                                                        <a href="/kategori/delete/{{this._id}}">
+                                                        <button class="item" data-toggle="tooltip" data-target="" data-placement="top"
+                                                            title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button></a>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             {{/each}}
@@ -487,21 +414,20 @@
     <!-- Vendor JS       -->
     <script src="/vendor/slick/slick.min.js">
     </script>
-    <!-- <script src="views/template/vendor/wow/wow.min.js"></script> -->
+    <!-- <script src="views//vendor/wow/wow.min.js"></script> -->
     <script src="/vendor/animsition/animsition.min.js"></script>
     <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <!-- <script src="vendor/counter-up/jquery.waypoints.min.js"></script> -->
-    <!-- <script src="vendor/counter-up/jquery.counterup.min.js"> -->
+    <!-- <script src="/vendor/counter-up/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="/vendor/counter-up/jquery.counterup.min.js"> -->
     </script>
-    <!-- <script src="template/vendor/circle-progress/circle-progress.min.js"></script> -->
+    <!-- <script src="/vendor/circle-progress/circle-progress.min.js"></script> -->
     <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <!-- <script src="template/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="template/vendor/select2/select2.min.js"> -->
+    <!-- <script src="/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/vendor/select2/select2.min.js"> -->
     </script>
 
     <!-- Main JS-->
     <script src="/js/main.js"></script>
-</body>
 
-</html>
+</body>
