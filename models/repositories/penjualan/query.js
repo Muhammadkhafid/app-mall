@@ -6,7 +6,7 @@ module.exports = {
         return result
     },
     getById : async (payload)=>{
-        const result = await penjualan.find(payload)
+        const result = await penjualan.findOne(payload)
         return result
-    }
+    },
 }

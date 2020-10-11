@@ -11,16 +11,16 @@ const {
     deletePenjualan
 } = require('../controllers/penjualan.controller');
 
+// Form
+router.get('/add', formAdd)
+router.get('/edit', formEdit)
+
 // Api
 router.get('/', getAllPenjualan)
 router.get('/:id', getPenjualanById)
 router.post('/add', addPenjualan)
 router.put('/edit/:id', editPenjualan) 
 router.delete('/delete/:id', deletePenjualan)
-
-// Form
-router.get('/add', formAdd)
-router.get('/edit', formEdit)
 
 
 module.exports = router

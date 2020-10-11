@@ -6,11 +6,11 @@ module.exports = {
         return result
     },
     getById : async (payload)=>{
-        const result = await agen.find(payload)
+        const result = await agen.findOne(payload)
         return result
     },
     getByName : async (payload)=>{
-        const result = await agen.find(payload)
+        const result = await agen.findOne(payload)
         return result
     }
 }

@@ -2,6 +2,12 @@ const worker = require('./workers/pembelian.worker');
 
 module.exports = {
     formAdd : async (req, res)=>{
+        try{
+            const result = await worker.getData()
+            res.status(200).json({message: 'Berhasil',data: result})
+        }catch(err){
+            res.status(400).json({message: 'error', error: err.message})
+        } 
         // render form
     },
     addPembelian : async (req, res)=>{
@@ -11,7 +17,7 @@ module.exports = {
             res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
-        }
+        } 
     },
     getAllPembelian : async (req, res)=>{
         try{
@@ -31,6 +37,7 @@ module.exports = {
     },
     formEdit : async (req, res)=>{
         const result = await worker.getById({_id : req.params.id})
+        res.json(result)
 
         // render form
     },
