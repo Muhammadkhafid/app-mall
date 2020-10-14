@@ -2,12 +2,32 @@ const worker = require('./workers/penjualan.worker');
 
 module.exports = {
     formAdd : async (req, res)=>{
-        // render form
+        try{
+            const result = await worker.getData()            
+            // render form
+            
+            res.status(200).json({message: 'Berhasil',data: result})
+        }catch(err){
+            res.status(400).json({message: 'error', error: err.message})
+        } 
     },
     addPenjualan : async (req, res)=>{
         const data = req.body
+        const sess = req.session
         try{
-            const result = await worker.create(data)
+            const result = await worker.create({data, sess})
+            res.status(200).json({message: 'Berhasil',data: result})
+        }catch(err){
+            res.status(400).json({message: 'error', error: err.message})
+        }
+    },
+    doPembayaran : async (req, res)=>{
+        const data = {
+            _id : req.params.id,
+            data : req.body
+        }
+        try{
+            const result = await worker.pembayaran(data)
             res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
@@ -30,9 +50,14 @@ module.exports = {
         }
     },
     formEdit : async (req, res)=>{
-        const result = await worker.getById({_id : req.params.id})
-
-        // render form
+        try{
+            const result = await worker.getById({_id : req.params.id})          
+            // render form
+            
+            res.status(200).json({message: 'Berhasil',data: result})
+        }catch(err){
+            res.status(400).json({message: 'error', error: err.message})
+        } 
     },
     editPenjualan : async (req, res)=>{
         const data = {

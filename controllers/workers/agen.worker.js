@@ -1,5 +1,5 @@
-const command = require('../../models/repositories/produk/command');
-const query = require('../../models/repositories/produk/query');
+const command = require('../../models/repositories/agen/command');
+const query = require('../../models/repositories/agen/query');
 
 module.exports = {
     getAll : async ()=>{
@@ -16,10 +16,6 @@ module.exports = {
     },
     getByName: async (payload)=>{
         const recordset = await query.getByName({nama : payload})
-        return recordset
-    },
-    update : async (payload)=>{
-        const recordset = await command.update(payload)
         return recordset
     },
 }
