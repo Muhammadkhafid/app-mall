@@ -1,12 +1,14 @@
 const worker = require('./workers/pembelian.worker');
+// const Distributor = require('../models/distributorModel');
 
 module.exports = {
     formAdd : async (req, res)=>{
         try{
             const result = await worker.getData()            
             // render form
-            
-            res.status(200).json({message: 'Berhasil',data: result})
+            res.render('pembelian', {
+                data: result
+            })
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
         } 
