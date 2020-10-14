@@ -3,24 +3,25 @@ const worker = require('./workers/penjualan.worker');
 // const Kurir = require('../models/kurirModel')
 
 module.exports = {
-    formAdd : async (req, res)=>{
-        try{
-            const result = await worker.getData()            
-            // render form
-            res.render('penjualan', {
-                data : result
-            })
-        }catch(err){
-            res.status(400).json({message: 'error', error: err.message})
-        } 
+    // formAdd : async (req, res)=>{
+    //     try{
+    //         const result = await worker.getData()            
+    //         // render form
+    //         res.render('penjualan', {
+    //             data : result
+    //         })
+    //     }catch(err){
+    //         res.status(400).json({message: 'error', error: err.message})
+    //     } 
         
-    },
+    // },
     addPenjualan : async (req, res)=>{
         const data = req.body
         const sess = req.session
         try{
             const result = await worker.create({data, sess})
-            res.status(200).json({message: 'Berhasil',data: result})
+            // res.status(200).json({message: 'Berhasil',data: result})
+            res.redirect('/penjualan')
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
         }
@@ -37,28 +38,6 @@ module.exports = {
             res.status(400).json({message: 'error', error: err.message})
         } 
         
-    },
-    addPenjualan: async (req, res) => {
-        const data = req.body
-        const sess = req.session
-        try{
-            const result = await worker.create({data, sess})
-            res.status(200).json({message: 'Berhasil',data: result})
-        }catch(err){
-            res.status(400).json({message: 'error', error: err.message})
-        }
-    },
-    doPembayaran : async (req, res)=>{
-        const data = {
-            _id : req.params.id,
-            data : req.body
-        }
-        try{
-            const result = await worker.pembayaran(data)
-            res.status(200).json({message: 'Berhasil',data: result})
-        }catch(err){
-            res.status(400).json({message: 'error', error: err.message})
-        }
     },
     formEdit : async (req, res)=>{
         try{
@@ -73,11 +52,14 @@ module.exports = {
     getAllPenjualan: async (req, res) => {
         try {
             const result = await worker.getAll()
-            // res.status(200).json({ message: 'Berhasil', data: result })
+            const result2 = await worker.getData()   
+            const data = {
+                result,
+                result2
+            }
             res.render('penjualan', {
-                data: result
+                data: data
             })
-            console.log(result);
         } catch (err) {
             res.status(400).json({ message: 'error', error: err.message })
         }

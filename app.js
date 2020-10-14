@@ -43,7 +43,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',admin);
 
-app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
+// app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
