@@ -7,12 +7,12 @@ router.get("/", async(req, res) => {
     console.log(sess)
     try {
         const distributor = await Distributor.find();
-        if (req.session.nama && req.session.email) {
+        if (sess.nama && sess.email) {
             res.render('distributor', {
                 title: 'Distributor',
-                nama: req.session.nama,
+                nama: sess.nama,
                 // nama: req.session.nama,
-                email: req.session.email,
+                email: sess.email,
                 data: distributor
             })
             console.log(distributor);
